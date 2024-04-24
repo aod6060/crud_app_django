@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Message Application</title>
-    </head>
-
-    <body>
-
-        <h1>Message Application</h1>
+{% extends "crud/base.html" %}
+{% block content %}
 
         <form action="/editpost/{{message.id}}/" method="post">
             {% csrf_token %}
@@ -25,5 +17,4 @@
         <div>
             <a href="/">Back to View All</a>
         </div>
-    </body>
-</html>
+{% endblock %}

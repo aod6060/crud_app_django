@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html>
+{% extends "crud/base.html" %}
+{% block content %}
+<div>
+    <a href="/new">New Message</a>
+</div>
+{% if messages %}
+    {% for m in messages %}
 
-<head>
-    <title>Message Application</title>
-</head>
+        <p>
+            {{m.id}}. {{m.message}} | 
+            <a href="/edit/{{m.id}}">Edit</a> |
+            <a href="/delete/{{m.id}}">Delete</a>
+        </p>
 
-<body>
-    <h1>Message Application</h1>
-
-    <div>
-        <a href="/new">New Message</a>
-    </div>
-    {% if messages %}
-        {% for m in messages %}
-
-            <p>
-                {{m.id}}. {{m.message}} | 
-                <a href="/edit/{{m.id}}">Edit</a>
-            </p>
-
-        {% endfor %}
-    {% else %}
-        <p>No Messages</p>
-    {% endif %}
-</body>
-
-</html>
+    {% endfor %}
+{% else %}
+    <p>No Messages</p>
+{% endif %}
+{% endblock %}

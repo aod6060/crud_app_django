@@ -1,0 +1,13 @@
+{% extends "crud/base.html" %}
+{% block content %}
+
+        <form action="/deletepost/{{message.id}}/" method="post">
+            {% csrf_token %}
+            <div>
+                Are you sure you want to delete "{{message.message}}?"
+            </div>
+            <div>
+                <input type="submit" value="Yes" /> | <input type="button" onclick="history.back()" value="No" />
+            </div>
+        </form>
+{% endblock %}

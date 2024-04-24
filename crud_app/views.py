@@ -42,3 +42,17 @@ def edit_post(request: HttpRequest, id:int):
     temp.message = request.POST.get("message")
     temp.save()
     return HttpResponseRedirect("/edit/"+str(id)+"/")
+
+
+def delete(request: HttpRequest, id:int):
+    message = Message.objects.get(id=id)
+    temp = loader.get_template("crud/delete.html")
+    context = {
+        "message": message
+    }
+    return HttpResponse(temp.render(context, request))
+
+def delete_post(request: HttpRequest, id:int):
+    temp = Message.objects.get(id=id)
+    temp.delete()
+    return HttpResponseRedirect("/")
