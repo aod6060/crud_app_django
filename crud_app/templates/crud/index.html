@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Message Application</title>
+</head>
+
+<body>
+    <h1>Message Application</h1>
+
+    {% if messages %}
+        {% for m in messages %}
+
+            <p>
+                {{m.id}}. {{m.message}}
+            </p>
+            
+        {% endfor %}
+    {% else %}
+        <p>No Messages</p>
+    {% endif %}
+</body>
+
+</html>
