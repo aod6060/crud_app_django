@@ -3,14 +3,12 @@
 
         <form action="/newpost/" method="post">
             {% csrf_token %}
-            <div>
-                <div>
-                    <label for="message">Message</label>
-                </div>
-                <textarea id="message" name="message"></textarea>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-control"></textarea>
             </div>
-            <div>
-                <input type="submit" value="New Message" />
+            <div class="mb-3">
+                <input type="submit" value="New Message" class="btn btn-primary"/>
             </div>
         </form>
 

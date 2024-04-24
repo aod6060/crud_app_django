@@ -3,11 +3,11 @@
 
         <form action="/deletepost/{{message.id}}/" method="post">
             {% csrf_token %}
-            <div>
+            <div class="mb-3">
                 Are you sure you want to delete "{{message.message}}?"
             </div>
             <div>
-                <input type="submit" value="Yes" /> | <input type="button" onclick="history.back()" value="No" />
+                <input type="submit" value="Yes" class="btn btn-danger"/> | <input type="button" onclick="history.back()" value="No" class="btn btn-primary"/>
             </div>
         </form>
 {% endblock %}
