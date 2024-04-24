@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Message Application</title>
+    </head>
+
+    <body>
+
+        <h1>Message Application</h1>
+
+        <form action="/editpost/{{message.id}}/" method="post">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <label for="message">Message</label>
+                </div>
+                <textarea id="message" name="message">{{message.message}}</textarea>
+            </div>
+            <div>
+                <input type="submit" value="Edit Message" />
+            </div>
+        </form>
+
+        <div>
+            <a href="/">Back to View All</a>
+        </div>
+    </body>
+</html>

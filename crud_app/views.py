@@ -28,3 +28,17 @@ def new_post(request: HttpRequest):
         temp.message = request.POST.get("message")
         temp.save()
         return HttpResponseRedirect("/")
+    
+def edit(request: HttpRequest, id:int):
+    message = Message.objects.get(id=id)
+    temp = loader.get_template("crud/edit.html")
+    context = {
+        "message": message
+    }
+    return HttpResponse(temp.render(context, request))
+
+def edit_post(request: HttpRequest, id:int):
+    temp = Message.objects.get(id=id)
+    temp.message = request.POST.get("message")
+    temp.save()
+    return HttpResponseRedirect("/edit/"+str(id)+"/")

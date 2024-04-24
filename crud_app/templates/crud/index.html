@@ -15,7 +15,8 @@
         {% for m in messages %}
 
             <p>
-                {{m.id}}. {{m.message}}
+                {{m.id}}. {{m.message}} | 
+                <a href="/edit/{{m.id}}">Edit</a>
             </p>
 
         {% endfor %}
