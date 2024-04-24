@@ -8,13 +8,16 @@
 <body>
     <h1>Message Application</h1>
 
+    <div>
+        <a href="/new">New Message</a>
+    </div>
     {% if messages %}
         {% for m in messages %}
 
             <p>
                 {{m.id}}. {{m.message}}
             </p>
-            
+
         {% endfor %}
     {% else %}
         <p>No Messages</p>
